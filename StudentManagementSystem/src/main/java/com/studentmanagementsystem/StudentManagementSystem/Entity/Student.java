@@ -10,7 +10,7 @@ public class Student {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private UUID studentId;
+    private Long studentId;
 
     @Column(name = "first_name", nullable = false)
     private String firstName;
@@ -34,11 +34,11 @@ public class Student {
         this.email = email;
     }
 
-    public UUID getStudentId() {
+    public Long getStudentId() {
         return studentId;
     }
 
-    public void setStudentId(UUID studentId) {
+    public void setStudentId(Long studentId) {
         this.studentId = studentId;
     }
 
