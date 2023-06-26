@@ -10,7 +10,7 @@ public class Student {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long studentId;
+    private int studentId;
 
     @Column(name = "first_name", nullable = false)
     private String firstName;
@@ -19,7 +19,7 @@ public class Student {
     private String lastName;
 
     @Column(name = "gender", nullable = false)
-    private char gender;
+    private String gender;
 
     @Column(name = "email", nullable = false)
     private String email;
@@ -27,18 +27,18 @@ public class Student {
     public Student() {
     }
 
-    public Student(String firstName, String lastName, char gender, String email) {
+    public Student(String firstName, String lastName, String gender, String email) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.gender = gender;
         this.email = email;
     }
 
-    public Long getStudentId() {
+    public int getStudentId() {
         return studentId;
     }
 
-    public void setStudentId(Long studentId) {
+    public void setStudentId(int studentId) {
         this.studentId = studentId;
     }
 
@@ -58,11 +58,11 @@ public class Student {
         this.lastName = lastName;
     }
 
-    public char getGender() {
+    public String getGender() {
         return gender;
     }
 
-    public void setGender(char gender) {
+    public void setGender(String gender) {
         this.gender = gender;
     }
 
