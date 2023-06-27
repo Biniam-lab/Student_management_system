@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Update Student</title>
+    <link rel="stylesheet"
+          href="/style.css">
+</head>
+<body>
+<div class="container">
+    <div class="row">
+        <h1 class="text-center">UPDATE STUDENT</h1>
+    </div>
+    <form th:action="@{/students/{studentId} (studentId=${student.studentId})}" th:object = "${student}" method="POST">
+        <fieldset>
+            <legend>Student Info</legend>
+            <div class="form-group">
+                <label class="form-label mt-4">First Name</label>
+                <input type="text" class="form-control" aria-describedby="emailHelp" placeholder="Enter first name" name = "firstName" th:field = "*{firstName}">
+                <label class="form-label mt-4">Last Name</label>
+                <input type="text" class="form-control" aria-describedby="emailHelp" placeholder="Enter last name" name = "lastName" th:field = "*{lastName}">
+                <label class="form-label mt-4">Gender</label>
+                <select class="form-select" name = "gender" th:field = "*{gender}">
+                    <option value="Male">Male</option>
+                    <option value="Female">Female</option>
+                    <option value="Other">Other</option>
+                </select>
+                <label class="form-label mt-4">Email address</label>
+                <input type="email" class="form-control" aria-describedby="emailHelp" placeholder="Enter email address" name = "email" th:field = "*{email}">
+            </div>
+            <button type="submit" class="btn-outline-secondary mt-3">UPDATE</button>
+        </fieldset>
+    </form>
+</div>
+</body>
+</html>

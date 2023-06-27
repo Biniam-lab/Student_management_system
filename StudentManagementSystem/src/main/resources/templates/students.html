@@ -32,7 +32,10 @@
             <td th:text="${student.lastName}"></td>
             <td th:text="${student.gender}"></td>
             <td th:text="${student.email}"></td>
-            <td></td>
+            <td>
+                <a class="btn btn-primary btn-sm" th:href="@{/students/update/{id}(id=${student.studentId})}">UPDATE</a>
+                <a class="btn btn-primary btn-sm" th:href="@{/students/{id}(id=${student.studentId})}">DELETE</a>
+            </td>
         </tr>
         </tbody>
     </table>
